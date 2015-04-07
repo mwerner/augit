@@ -12,6 +12,10 @@ $ gem install augit
 
 Augit will inspect your repository and evaluate the age and diffs of all remote and local branches.
 
+    cd /path/to/my/git/repo
+    augit audit
+
+![augit](http://i.imgur.com/6V7Hkog.png)
 
 It will display all the remote branches that have been merged into master and give you the option of removing all of them in one go.
 
