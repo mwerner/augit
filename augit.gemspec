@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Matthew Werner"]
   spec.email         = ["m@mjw.io"]
   spec.summary       = %q{Audit your git}
-  spec.description   = %q{TODO: Write a longer description. Optional.}
+  spec.description   = %q{Clean up your git branches}
   spec.homepage      = ""
   spec.license       = "MIT"
 
