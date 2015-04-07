@@ -1,26 +1,21 @@
 # Augit
 
-TODO: Write a gem description
+Audit your git branches
 
 ## Installation
 
-Add this line to your application's Gemfile:
-
-```ruby
-gem 'augit'
+```shell
+$ gem install augit
 ```
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install augit
 
 ## Usage
 
-TODO: Write usage instructions here
+Augit will inspect your repository and evaluate the age and diffs of all remote and local branches.
+
+
+It will display all the remote branches that have been merged into master and give you the option of removing all of them in one go.
+
+Augit will then iterate through all unmerged branches one by one and give you the age, author and files changed. It will also print a link to a compare page on Github.
 
 ## Contributing
 

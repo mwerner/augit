@@ -1,0 +1,20 @@
+#!/usr/bin/env ruby
+require 'thor'
+require 'augit'
+
+module Augit
+  class Command < Thor
+    desc "audit", "Audit the current directory"
+    def audit
+      Augit.audit
+    end
+
+    private
+
+    def directory
+      `pwd`.rstrip
+    end
+  end
+end
+
+Augit::Command.start(ARGV)
