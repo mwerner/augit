@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    augit (0.0.2)
+    augit (0.0.3)
       actionview
       colorize
       highline
@@ -10,13 +10,13 @@ PATH
 GEM
   remote: https://rubygems.org/
   specs:
-    actionview (4.2.1)
-      activesupport (= 4.2.1)
+    actionview (4.2.0)
+      activesupport (= 4.2.0)
       builder (~> 3.1)
       erubis (~> 2.7.0)
       rails-dom-testing (~> 1.0, >= 1.0.5)
       rails-html-sanitizer (~> 1.0, >= 1.0.1)
-    activesupport (4.2.1)
+    activesupport (4.2.0)
       i18n (~> 0.7)
       json (~> 1.7, >= 1.7.7)
       minitest (~> 5.1)
@@ -36,11 +36,11 @@ GEM
       mini_portile (~> 0.6.0)
     rails-deprecated_sanitizer (1.0.3)
       activesupport (>= 4.2.0.alpha)
-    rails-dom-testing (1.0.6)
+    rails-dom-testing (1.0.5)
       activesupport (>= 4.2.0.beta, < 5.0)
       nokogiri (~> 1.6.0)
       rails-deprecated_sanitizer (>= 1.0.1)
-    rails-html-sanitizer (1.0.2)
+    rails-html-sanitizer (1.0.1)
       loofah (~> 2.0)
     rake (10.4.2)
     thor (0.19.1)
