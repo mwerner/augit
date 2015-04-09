@@ -1,7 +1,9 @@
 module Augit
   class Repo
-    def initialize
-      
+    attr_reader :regexp
+
+    def initialize(options = {})
+      @regexp = options[:regexp]
     end
 
     def origin
@@ -20,7 +22,8 @@ module Augit
     private
 
     def sanitize_string
-      "grep -v master | sed \"s/ *origin\\///\" | sed \"s/ *tddium\\///\""
+      sanitize = "grep -v master | sed \"s/ *origin\\///\" | sed \"s/ *tddium\\///\""
+      regexp.nil? ? sanitize : "grep #{regexp} | #{sanitize}"
     end
   end
 end

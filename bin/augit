@@ -4,16 +4,22 @@ require 'augit'
 
 module Augit
   class Command < Thor
+
     desc "audit", "Audit the current directory"
+    method_option(:regexp, {
+      aliases: '-e',
+      desc: 'Only consider branches matching the provided regular expression'
+    })
+    method_option(:status, {
+      aliases: '-s',
+      desc: 'Show the statuses of the specified git branches'
+    })
+
     def audit
-      Augit.audit
+      Augit.audit(options)
     end
+    default_task :audit
 
-    private
-
-    def directory
-      `pwd`.rstrip
-    end
   end
 end
 

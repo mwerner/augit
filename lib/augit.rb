@@ -7,6 +7,7 @@ module Augit
   autoload :Presenter, 'augit/presenter'
 
   def self.audit(options = {})
-    Augit::Inspector.new.list
+    inspector = Augit::Inspector.new(options)
+    options[:status] ? inspector.status : inspector.list
   end
 end

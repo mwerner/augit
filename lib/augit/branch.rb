@@ -1,6 +1,15 @@
 module Augit
   class Branch
+    include ::ActionView::Helpers::DateHelper
+
     attr_reader :name, :author, :origin, :commits, :age
+
+    CHANGE_MAP = [
+      { name: 'commit',    regex: /^commit\s(.*)/ },
+      { name: 'author',    regex: /^Author:\s(.*)\s</ },
+      { name: 'timestamp', regex: /^Date:\s*(.*)$/ },
+      { name: 'file',      regex: /^:.*\s(.*)/ }
+    ]
 
     def initialize(name, origin)
       @name = name
@@ -31,7 +40,7 @@ module Augit
       changes.each do |line|
         next if line.nil? || line == ''
 
-        checks.each do |check|
+        CHANGE_MAP.each do |check|
           value = line.match(check[:regex])
           next if value.nil?
 
@@ -53,13 +62,6 @@ module Augit
 
     def changes
       `git whatchanged --abbrev-commit master.. origin/#{name}`.split("\n")
-    end
-
-    def checks
-      [{ name: 'commit',    regex: /^commit\s(.*)/ },
-        { name: 'author',    regex: /^Author:\s(.*)\s</ },
-        { name: 'timestamp', regex: /^Date:\s*(.*)$/ },
-        { name: 'file',      regex: /^:.*\s(.*)/ }]
     end
   end
 end
