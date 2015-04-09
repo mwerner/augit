@@ -51,7 +51,7 @@ module Augit
     end
 
     def prompt(message)
-      choice = ask("#{message} |(y)es, (n)o, (q)uit|".cyan)
+      choice = ask("#{message} |(y)es, (N)o, (q)uit|".cyan)
       choice.strip.downcase.to_sym
     end
 
@@ -59,7 +59,7 @@ module Augit
       puts "#{pluralize(merged.length, 'branch')} merged into master:".green
       puts "  #{merged.join("\n  ")}"
 
-      case prompt("Delete all #{merged.length} branches?")
+      case prompt("Delete #{pluralize(merged.length, 'branch')}?")
       when :y; merged.each{|branch| delete(branch) }
       when :n;
       when :q; exit
