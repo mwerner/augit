@@ -1,3 +1,4 @@
+require 'ext/time'
 require "augit/version"
 
 module Augit
