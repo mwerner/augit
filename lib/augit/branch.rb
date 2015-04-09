@@ -1,7 +1,7 @@
+require 'time'
+
 module Augit
   class Branch
-    include ::ActionView::Helpers::DateHelper
-
     attr_reader :name, :author, :origin, :commits, :age
 
     CHANGE_MAP = [
