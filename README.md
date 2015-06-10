@@ -21,6 +21,16 @@ It will display all the remote branches that have been merged into master and gi
 
 Augit will then iterate through all unmerged branches one by one and give you the age, author and files changed. It will also print a link to a compare page on Github. This is useful when using iTerm to cmd+click the link to open a diff.
 
+#### Options
+
+    -e : Only consider branches matching the provided regular expression
+    augit audit -e mwerner
+
+
+    -s : Show the statuses of the specified git branches
+    augit audit -s
+
+
 ## Contributing
 
 1. Fork it ( https://github.com/[my-github-username]/augit/fork )
